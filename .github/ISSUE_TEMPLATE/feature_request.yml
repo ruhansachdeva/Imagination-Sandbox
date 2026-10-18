@@ -1,0 +1,26 @@
+name: Idea or feature request
+description: Suggest a program, game or improvement for the sandbox
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+      description: Describe the idea and what makes it interesting.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Anything similar you have seen?
+      description: Links or prior art, if any.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contributing
+    attributes:
+      label: Would you want to build it?
+      options:
+        - label: I would be interested in opening a pull request for this
