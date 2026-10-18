@@ -13,3 +13,30 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[tool.setuptools.package-data]
+imagination_sandbox = ["py.typed"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# main.py and the tests add src/ to sys.path before importing the package,
+# so their imports cannot sit at the top of the file.
+"main.py" = ["E402"]
+"tests/*" = ["E402"]
