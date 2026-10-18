@@ -7,3 +7,17 @@ venv/
 .coverage
 htmlcov/
 .DS_Store
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artefacts
+build/
+dist/
+*.egg-info/
+
+# Tooling caches
+.ruff_cache/
